@@ -4,6 +4,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class PizzaPage extends AbstractPage {
 
@@ -31,8 +33,11 @@ public class PizzaPage extends AbstractPage {
         PageFactory.initElements(driver, this);
     }
 
-    public MenuOrder addOrderPizzaInBasket(){
+    public MenuOrder clickOrderPizza() {
         buttonOrderPizzaMargherita.click();
+        new WebDriverWait(driver, 5)
+                .until(ExpectedConditions
+                        .visibilityOf(buttonOrderPizzaMargherita));
         buttonOrderPizzaMargheritaInBasket.click();
         return new MenuOrder(driver);
     }

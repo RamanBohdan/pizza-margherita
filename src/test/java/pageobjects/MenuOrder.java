@@ -7,7 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class MenuOrder extends AbstractPage {
 
-    public final static String titleMenuOrder ="Оформление заказа";
+    public final static String titleMenuOrder = "Оформление заказа";
 
     @FindBy(xpath = "//div[@class='pageTitle']/h1")
     private WebElement labelCheckout;
@@ -19,12 +19,12 @@ public class MenuOrder extends AbstractPage {
         PageFactory.initElements(driver, this);
     }
 
-    public MenuOrder openPageMenuOrder(){
+    public MenuOrder openPageMenuOrder() {
         driver.get(MENU_ORDER_PAGE);
         return this;
     }
 
-    public String getTitleCheckout(){
+    public String getTitleCheckout() {
         return labelCheckout.getText();
     }
 }

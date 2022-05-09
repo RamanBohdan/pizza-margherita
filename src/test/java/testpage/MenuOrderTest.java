@@ -1,7 +1,10 @@
-import org.testng.Assert;
+package testpage;
+
 import org.testng.annotations.Test;
 import pageobjects.HomePage;
 import pageobjects.MenuOrder;
+
+import static org.testng.AssertJUnit.assertEquals;
 
 public class MenuOrderTest extends AbstractTest {
 
@@ -10,8 +13,9 @@ public class MenuOrderTest extends AbstractTest {
         MenuOrder menuOrder = new HomePage(driver)
                 .openPage()
                 .clickButtonPizza()
-                .addOrderPizzaInBasket();
+                .clickOrderPizza()
+                .openPageMenuOrder();
 
-        Assert.assertEquals(menuOrder.getTitleCheckout(), MenuOrder.titleMenuOrder);
+        assertEquals(menuOrder.getTitleCheckout(), MenuOrder.titleMenuOrder);
     }
 }

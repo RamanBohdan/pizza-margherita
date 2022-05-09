@@ -54,11 +54,11 @@ public class HomePage extends AbstractPage {
     private WebElement labelPizzaHotHome;
     @FindBy(xpath = "//li[6][@class='other']//span")
     private WebElement labelPizzaWaterHome;
-    @FindBy(xpath = "//li[7][@class='other']//span")
-    private WebElement labelPizzaDesertHome;
     @FindBy(xpath = "//li[8][@class='other']//span")
-    private WebElement labelPizzaChildHome;
+    private WebElement labelPizzaDesertHome;
     @FindBy(xpath = "//li[9][@class='other']//span")
+    private WebElement labelPizzaChildHome;
+    @FindBy(xpath = "//li[11][@class='other']//span")
     private WebElement labelPizzaOtherGoodsHome;
 
     public HomePage(WebDriver driver) {
