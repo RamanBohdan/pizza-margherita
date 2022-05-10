@@ -8,8 +8,6 @@ import org.openqa.selenium.support.PageFactory;
 public class MenuOrder extends AbstractPage {
 
     public final static String titleMenuOrder = "Оформление заказа";
-    public final static String titlePizzaMargheritaName = "Пицца \"Маргарита\"";
-
 
     @FindBy(xpath = "//div[@class='pageTitle']/h1")
     private WebElement labelCheckout;
