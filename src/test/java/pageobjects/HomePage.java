@@ -79,6 +79,11 @@ public class HomePage extends AbstractPage {
         return new PizzaPage(driver);
     }
 
+    public DrinkPage clickButtonDrink() {
+        buttonNapitki.click();
+        return new DrinkPage(driver);
+    }
+
     public String getTitleBasketPizza() {
         return labelBasket.getText();
     }

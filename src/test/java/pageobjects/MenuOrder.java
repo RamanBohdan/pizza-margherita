@@ -13,8 +13,10 @@ public class MenuOrder extends AbstractPage {
 
     @FindBy(xpath = "//div[@class='pageTitle']/h1")
     private WebElement labelCheckout;
-    @FindBy(xpath = "//*[@id=\"basket_expand\"]//div[@class='cart-product-name title']")
+    @FindBy(xpath = "//*[@id='basket_expand']//div[@class='cart-product-name title']")
     private WebElement labelPizzaMargherita;
+    @FindBy(xpath = "//*[@id='basket_expand']//div[@class='cart-product-name title']")
+    private WebElement labelDrink;
 
     private WebDriver driver;
 
@@ -27,9 +29,15 @@ public class MenuOrder extends AbstractPage {
         driver.get(MENU_ORDER_PAGE);
         return this;
     }
+
     public boolean isPizzaInBasket(String pizzaName) {
         return labelPizzaMargherita.getText().contains(pizzaName);
     }
+
+    public boolean isDrinkInBasket(String drinkName) {
+        return labelDrink.getText().contains(drinkName);
+    }
+
     public String getTitleCheckout() {
         return labelCheckout.getText();
     }
