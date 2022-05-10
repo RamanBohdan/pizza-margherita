@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import javax.xml.soap.SAAJResult;
+
 public class HomePage extends AbstractPage {
 
     public static final String titleShortNumberPhone = "7773";
@@ -15,9 +17,6 @@ public class HomePage extends AbstractPage {
     public static final String titlePizzaSalad = "САЛАТЫ, СУПЫ, ХЛЕБ";
     public static final String titlePizzaHot = "ГОРЯЧИЕ БЛЮДА";
     public static final String titlePizzaWater = "НАПИТКИ";
-    public static final String titlePizzaDesert = "ДЕСЕРТЫ";
-    public static final String titlePizzaChild = "ДЕТСКОЕ МЕНЮ";
-    public static final String titlePizzaOtherGoods = "ДРУГИЕ ТОВАРЫ";
 
     private WebDriver driver;
     @FindBy(xpath = "//div[@class='mainmenu']/ul/li[1]")
@@ -32,11 +31,11 @@ public class HomePage extends AbstractPage {
     private WebElement buttonGoryachee;
     @FindBy(xpath = "//div[@class='mainmenu']/ul/li[6]")
     private WebElement buttonNapitki;
-    @FindBy(xpath = "//div[@class='mainmenu']/ul/li[7]")
-    private WebElement buttonDessert;
     @FindBy(xpath = "//div[@class='mainmenu']/ul/li[8]")
-    private WebElement buttonDeti;
+    private WebElement buttonDessert;
     @FindBy(xpath = "//div[@class='mainmenu']/ul/li[9]")
+    private WebElement buttonDeti;
+    @FindBy(xpath = "//div[@class='mainmenu']/ul/li[11]")
     private WebElement buttonTovari;
     @FindBy(xpath = "//div[@class='header']//span[@class='number short_number']")
     private WebElement labelShortNumber;
@@ -54,10 +53,14 @@ public class HomePage extends AbstractPage {
     private WebElement labelPizzaHotHome;
     @FindBy(xpath = "//li[6][@class='other']//span")
     private WebElement labelPizzaWaterHome;
+    @FindBy(xpath = "//li[7][@class='other']//span")
+    private WebElement labelPizzaBreakfastHome;
     @FindBy(xpath = "//li[8][@class='other']//span")
     private WebElement labelPizzaDesertHome;
     @FindBy(xpath = "//li[9][@class='other']//span")
     private WebElement labelPizzaChildHome;
+    @FindBy(xpath = "//li[10][@class='other']//span")
+    private WebElement labelPizzaDinnerHome;
     @FindBy(xpath = "//li[11][@class='other']//span")
     private WebElement labelPizzaOtherGoodsHome;
 
@@ -106,17 +109,5 @@ public class HomePage extends AbstractPage {
 
     public String getTitlePizzaWaterHome() {
         return labelPizzaWaterHome.getText();
-    }
-
-    public String getTitlePizzaDesertHome() {
-        return labelPizzaDesertHome.getText();
-    }
-
-    public String getTitlePizzaChildHome() {
-        return labelPizzaChildHome.getText();
-    }
-
-    public String getTitlePizzaOtherGoodsHome() {
-        return labelPizzaOtherGoodsHome.getText();
     }
 }
