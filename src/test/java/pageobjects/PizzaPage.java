@@ -42,6 +42,10 @@ public class PizzaPage extends AbstractPage {
         return new MenuOrder(driver);
     }
 
+    public boolean isPizzaInBasket(String pizzaName) {
+        return labelPizzaMargherita.getText().contains(pizzaName);
+    }
+
     public String getTitleHeaderPizza() {
         return labelHeaderPizza.getText();
     }
